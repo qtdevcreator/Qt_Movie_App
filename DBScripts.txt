@@ -1,0 +1,32 @@
+                                                                     
+create database movie;
+use movie;                                                                     
+                                                                     
+drop table Reg;                                             
+drop table AssignMovie;
+drop table Movie;
+drop table MovieShow;
+drop table Booking;
+drop table Theatre;
+
+create table Reg (ID INTEGER,stuname varchar(64),stmname varchar(64),stlname varchar(64),stemail varchar(64),stgender varchar(20),stpass varchar(20),stcpass varchar(20),stmobile varchar(20),staddress varchar(250),PRIMARY KEY(ID));
+create table AssignMovie (ID INTEGER,Moviename varchar(64),Theatrename varchar(64),AvailDt varchar(64), PRIMARY KEY(ID));
+create table Movie (ID INTEGER,Moviename varchar(64),Director varchar(64),Actors varchar(64),Rating varchar(64),PRIMARY KEY(Id));
+create table MovieShow (ID INTEGER,Theatrename varchar(64),Moviename varchar(64),BookingDt varchar(64),Showtime varchar(64),Nooftickets int,PRIMARY KEY(ID));
+create table Booking (ID INTEGER,Uname varchar(64),Mname varchar(64),Lname varchar(64),Showdt varchar(64),Showtime varchar(64),Nooftickets int,Seatno varchar(64),Cost int,TheatreId varchar(64),PRIMARY KEY(ID));  
+create table Theatre (ID INTEGER,Tname varchar(64),Taddress varchar(64),Manager varchar(64),Size varchar(64),TicketCost int,PRIMARY KEY(ID));
+
+insert into Reg (stuname,stmname,stlname,stemail,stgender,stpass,stcpass,stmobile,staddress) values("Das","M","Gupta","das","Male","e","e","9087473812","Malad(W)");
+
+insert into AssignMovie (Moviename,Theatrename,AvailDt) values('Krish','Cinemax','05-09-2015');
+insert into AssignMovie (Moviename,Theatrename,AvailDt) values('Dhoom','Kasturba','05-09-2015');
+
+insert into Movie (Moviename,Director,Actors,Rating) values('Krish','RK','AK, BK','4 Stars');
+insert into Movie (Moviename,Director,Actors,Rating) values('Dhoom','HP','CK,SL','5 Stars');
+
+insert into MovieShow (Theatrename,Moviename,BookingDt,Showtime,Nooftickets) values('Cinemax','Krish','05-09-2015','Morning Show',50);
+insert into MovieShow (Theatrename,Moviename,BookingDt,Showtime,Nooftickets) values('Kasturba','Dhoom','05-09-2015','Morning Show',5);
+
+insert into Theatre (Tname,Taddress,Manager,Size,TicketCost) values('Cinemax','Andheri','JP','100',200);
+insert into Theatre (Tname,Taddress,Manager,Size,TicketCost) values('Kasturba','Malad','TR','5',50);
+
